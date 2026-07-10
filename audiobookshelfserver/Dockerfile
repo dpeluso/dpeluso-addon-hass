@@ -7,4 +7,4 @@ LABEL io.hass.version=${BUILD_VERSION}
 LABEL io.hass.type="addon" 
 LABEL io.hass.arch="aarch64|amd64" 
 
-EXPOSE 80
+EXPOSE 13378

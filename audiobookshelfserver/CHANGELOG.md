@@ -1,5 +1,5 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
-## 1.4.44
+## 1.4.441
 - Updated port to 13378.
 
 ## 1.4.43
