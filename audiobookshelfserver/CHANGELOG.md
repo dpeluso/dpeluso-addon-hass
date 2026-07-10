@@ -1,4 +1,7 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
+## 1.4.3
+- Fixed Ingress routing by setting the ingress entry path to `/audiobookshelf`.
+
 ## 1.4.2
 - Added Home Assistant Ingress support.
 

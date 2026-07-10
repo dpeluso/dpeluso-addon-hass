@@ -1,5 +1,5 @@
 # Audiobookshelf Home Assistant Add-on
-![Static Badge](https://img.shields.io/badge/release-1.4.2-blue)
+![Static Badge](https://img.shields.io/badge/release-1.4.3-blue)
 ![Project Stage][project-stage-shield]
 [![License][license-shield]](LICENSE.md)
 
