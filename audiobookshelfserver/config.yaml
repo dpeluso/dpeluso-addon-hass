@@ -1,12 +1,12 @@
 name: Audiobookshelf Server
-version: 1.4.43
+version: 1.4.44
 slug: audiobookshelfserver
 description: Self-hosted audiobook & podcast server
 arch:
   - amd64
   - aarch64
 ingress: true
-ingress_port: 80
+ingress_port: 13378
 ingress_stream: true
 ingress_entry: audiobookshelf
 boot: manual

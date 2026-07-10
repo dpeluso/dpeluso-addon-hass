@@ -1,4 +1,7 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
+## 1.4.44
+- Updated port to 13378.
+
 ## 1.4.43
 - Fixed Home Assistant ingress entry path to avoid `Cannot GET //audiobookshelf`.
 
