@@ -1,0 +1,16 @@
+{
+  "name": "Audiobookshelf Server",
+  "version": "2.35.1",
+  "slug": "audiobookshelfserver",
+  "description": "Audiobookshelf media server with Home Assistant ingress",
+  "url": "https://github.com/advplyr/audiobookshelf",
+  "startup": "services",
+  "boot": "auto",
+  "ingress": true,
+  "ingress_port": 80,
+  "panel_icon": "mdi:bookshelf",
+  "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
+  "map": ["config:rw", "media:rw", "share:rw"],
+  "options": {},
+  "schema": {}
+}

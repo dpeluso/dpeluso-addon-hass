@@ -1,22 +1,38 @@
-# Audiobookshelf Home Assistant Add-on
-![Static Badge](https://img.shields.io/badge/release-1.4.3-blue)
+# Home Assistant Add-on: Audiobookshelf Server
+
+Audiobookshelf is a self-hosted audiobook and podcast server.
+
+This add-on packages the upstream release pinned in [build.json](build.json) and exposes it through Home Assistant ingress.
+
+## Details
+
+- Latest pinned release: v2.35.1
+- Ingress path: handled by Home Assistant
+- Base path inside the container: root (`ROUTER_BASE_PATH` is cleared so ingress can own the URL)
+
+## Storage
+
+- [config](config.json): Audiobookshelf application config and database files
+- [media](config.json): Your audiobook and podcast library
+- [share](config.json): Optional shared files
+
+## Notes
+
+- Audiobookshelf requires a websocket-capable reverse proxy, which is why this add-on uses ingress.
+- The upstream project documents a fixed `/audiobookshelf` subpath for traditional reverse proxy setups, but the add-on clears that base path so the Home Assistant ingress URL remains authoritative.
+- To update to a newer upstream release, change the tag in [build.json](build.json) and keep [config.json](config.json) in sync.# Audiobookshelf Home Assistant Add-on
+![Static Badge](https://img.shields.io/badge/release-2.35.1-blue)
 ![Project Stage][project-stage-shield]
 [![License][license-shield]](LICENSE.md)
 
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]
-![Supports armhf Architecture][armhf-shield]
-![Supports armv7 Architecture][armv7-shield]
-![Supports i386 Architecture][i386-shield]
 
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg
-[armv7-shield]: https://img.shields.io/badge/armv7-no-red.svg
-[i386-shield]: https://img.shields.io/badge/i386-no-red.svg
 
 [commits-shield]: https://img.shields.io/github/commit-activity/y/bigred10151990/ha-addons.svg
 [commits]: https://github.com/bigred10151990/ha-addons/commits/main
@@ -29,7 +45,7 @@
 This app runs [Audiobookshelf](https://www.audiobookshelf.org/) inside Home Assistant OS.
 
 This app has access to the addon_config, backup, media, and share folders.  
-AudioBookShelf Version 2.35.1
+Audiobookshelf Version 2.35.1
 
 ## Installation
 [![Open your Home Assistant instance and show the add app repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fbigred10151990%2Fha-addons)
@@ -37,6 +53,7 @@ AudioBookShelf Version 2.35.1
 Install the **Audiobookshelf** app from this repo and start it.
 
 Home Assistant Ingress is supported, so you can open Audiobookshelf directly from the add-on panel without exposing a network port.
+Audiobookshelf supports subfolder hosting on the fixed `/audiobookshelf` path, which is the path this add-on uses for ingress.
 
 If you want to use a network drive please add it to homeassistant in Network Storage with the media usage option.
 
@@ -69,9 +86,9 @@ If you want to use a network drive please add it to homeassistant in Network Sto
 
 ## Disclaimers and copyright information
 
-I have just put the wrapper on the official Audiobookshelf docker image so it works as a home assistant addon. 
+This add-on wraps the official Audiobookshelf container image so it runs as a Home Assistant add-on with ingress support.
 
-Audiobookshelf  Self-hosted audiobook server
+Audiobookshelf Self-hosted audiobook server
 Copyright (C) 2021  advplyr
 
 This program comes with ABSOLUTELY NO WARRANTY
